@@ -32,6 +32,9 @@ public class Main {
         Recept r2 = new Recept("Recept 2",  3, sastojci2);
         Recept r3 = new Recept("Recept 3",  100, sastojci2);
         Recept r4 = new Recept("Recept 4",  6, sastojci1);
+        r4.dodajSastojak(new SastojakRecepta("Med", 2.5, 240));
+        //r4.ukloniSastojak(new SastojakRecepta("Med", 2.5, 240));
+        r4.ukloniSastojak(new SastojakRecepta("Mast", 2.05, 100));
 
         System.out.println(r1);
         System.out.println(r1.ukupnaCena());
@@ -41,6 +44,14 @@ public class Main {
         System.out.println(r3.ukupnaCena());
         System.out.println(r4);
         System.out.println(r4.ukupnaCena());
-
+        System.out.println(r4.toString(true));
+        System.out.println(r4.skalirajRecept(60).toString(true));
+        ArrayList<Recept> rcpt = new ArrayList<>();
+        rcpt.add(r1);
+        rcpt.add(r2);
+        rcpt.add(r3);
+        rcpt.add(r4);
+        System.out.println(Recept.filtrirajRecepte(rcpt, 1));
+        System.out.println(Recept.filtrirajRecepte(rcpt, new int[]{1, 2, 3}));
     }
 }
