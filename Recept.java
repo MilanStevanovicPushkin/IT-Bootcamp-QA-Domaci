@@ -66,7 +66,7 @@ public class Recept {
         sb.append("Sastojci: ");
         for (SastojakRecepta sr : sastojciRecepta) sb.append(sr.getNaziv() + ", ");
 
-        return sb.substring(0, sb.length() - 2);
+        return sb.substring(0, sb.length() - 2).concat("\n***********\n");
     }
     public String toString(boolean b) {
         final StringBuilder sb = new StringBuilder(naziv + "\n");
@@ -90,7 +90,7 @@ public class Recept {
         sb.append("Sastojci: ");
         for (SastojakRecepta sr : sastojciRecepta) sb.append(sr.getNaziv() + " - " + sr.getKolicina() + ", ");
 
-        return sb.substring(0, sb.length() - 2);
+        return sb.substring(0, sb.length() - 2).concat("\n***********\n");
     }
 
     public double ukupnaCena() {
